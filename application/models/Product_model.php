@@ -106,4 +106,5 @@ class Product_model extends CI_Model
 			return array_map('unlink', glob(FCPATH."upload/product/$filename.*"));
 	    }
 	}
+
 }
