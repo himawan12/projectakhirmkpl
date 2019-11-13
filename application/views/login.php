@@ -1,6 +1,9 @@
 <html>
 <head>
     <title>Login - Dedua Application</title>
+    <?php $this->load->view("_partials_home/head.php") ?>
+    <?php $this->load->view("_partials_home/navbar.php") ?>
+
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         .form-signin
@@ -84,17 +87,17 @@
 <div class="container" style="margin-top: 50px">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <h1 class="text-center login-title">Silahkan Login</h1>
             <?php if(isset($error)) { echo $error; }; ?>
             <div class="account-wall">
+                <h1 class="text-center login-title">Silahkan Login</h1>
                 <img class="profile-img" src="https://static.thenounproject.com/png/363633-200.png" alt="">    
                 <form class="form-signin" method="POST" action="<?php echo base_url() ?>index.php/login">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="username" placeholder="Username Anda" autofocus>
+                    <input type="text" class="form-control" name="username" placeholder="Username Anda" autocomplete="off">
                     <?php echo form_error('username'); ?>
                 </div>
                 <div class="form-group">
-                    <input type="password" name="password" class="form-control" placeholder="Password Anda">
+                    <input type="password" name="password" class="form-control" placeholder="Password Anda" autocomplete="off">
                     <?php echo form_error('password'); ?>
                 </div>
 

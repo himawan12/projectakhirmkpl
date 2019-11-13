@@ -23,8 +23,14 @@
 
         <!-- Breadcrumbs-->
         <?php $this->load->view("admin/_partials/breadcrumb.php") ?>
+        
+        <div class="panel-body">
+            <h4><p align="center">Selamat Datang <b><font color=blue><?php echo $this->session->userdata("user_name") ?></font></b></p></h4>
+            <br/>
+            <h4><p align="center">Ini adalah halaman administrator</p></h4>
+        </div>
 
-        <!-- Icon Cards -->
+        <!-- Icon Cards 
         <div class="row">
           <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-primary o-hidden h-100">
@@ -91,7 +97,7 @@
             </div>
           </div>
         </div>
-        
+        -->
 
         <!-- Area Chart Example
         <div class="card mb-3">

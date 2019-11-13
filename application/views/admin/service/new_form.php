@@ -1,3 +1,9 @@
+<?php 
+  if($this->session->userdata('user_name') == ''){
+    redirect('login');
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +43,15 @@
 								 type="text" name="nama_jasa" placeholder="Nama Jasa" />
 								<div class="invalid-feedback">
 									<?php echo form_error('nama_jasa') ?>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="name">Gambar</label>
+								<input class="form-control-file <?php echo form_error('image') ? 'is-invalid':'' ?>"
+								 type="file" name="image" />
+								<div class="invalid-feedback">
+									<?php echo form_error('image') ?>
 								</div>
 							</div>
 

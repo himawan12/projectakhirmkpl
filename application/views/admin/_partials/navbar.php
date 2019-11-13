@@ -4,6 +4,7 @@
         <i class="fas fa-bars"></i>
     </button>
 
+    <a href="<?php echo site_url('admin') ?>"><img src="<?php echo base_url('img/logo.png') ?>"></a>
     <a class="navbar-brand mr-1" href="<?php echo site_url('admin') ?>"><?php echo SITE_NAME ?></a>
 
     <!-- Navbar Search 
@@ -59,7 +60,7 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
-                <i class="fas fa-user-circle fa-fw"></i> Admin
+                <i class="fas fa-user-circle fa-fw"></i><?php echo $this->session->userdata("user_name") ?>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <!--
