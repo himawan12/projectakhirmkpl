@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2019 at 11:13 AM
+-- Generation Time: Jul 16, 2019 at 10:05 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `jasa` (
   `id_jasa` varchar(64) NOT NULL,
   `nama_jasa` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL DEFAULT 'default.jpg',
   `harga_jasa` int(11) NOT NULL,
   `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -39,9 +40,8 @@ CREATE TABLE `jasa` (
 -- Dumping data for table `jasa`
 --
 
-INSERT INTO `jasa` (`id_jasa`, `nama_jasa`, `harga_jasa`, `keterangan`) VALUES
-('5d07578c76890', 'Cuci mobil', 50000, 'Kling-kling'),
-('5d07579d9ddd2', 'Ganti oli', 50000, 'Oli harus beli lagi?');
+INSERT INTO `jasa` (`id_jasa`, `nama_jasa`, `image`, `harga_jasa`, `keterangan`) VALUES
+('5d15d787e9a8d', 'Carwash Express', '5d15d787e9a8d.jpg', 30000, 'Size S');
 
 -- --------------------------------------------------------
 
@@ -52,18 +52,38 @@ INSERT INTO `jasa` (`id_jasa`, `nama_jasa`, `harga_jasa`, `keterangan`) VALUES
 CREATE TABLE `produk` (
   `id_produk` varchar(64) NOT NULL,
   `nama_produk` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL DEFAULT 'default.jpg',
+  `kategori` varchar(255) NOT NULL,
   `harga_produk` int(11) NOT NULL,
-  `keterangan` text NOT NULL
+  `keterangan` text NOT NULL,
+  `post_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `produk`
 --
 
-INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga_produk`, `keterangan`) VALUES
-('5d04c8bae2056', 'Crystal beard', 5000, 'ABCD'),
-('5d04f95b73136', 'Mind oil', 100000, 'Stok habis'),
-('5d04ff6b884c4', 'Alven', 12324, 'Journey to Void');
+INSERT INTO `produk` (`id_produk`, `nama_produk`, `image`, `kategori`, `harga_produk`, `keterangan`, `post_date`) VALUES
+('5d11e25341278', 'Liqui moly', '5d11e25341278.jpg', 'Oli', 550000, 'Tipe 10W-40', '2019-07-07 16:36:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`username`, `password`) VALUES
+('admin', 'admin123'),
+('himawan', 'lupa');
 
 --
 -- Indexes for dumped tables
@@ -80,6 +100,12 @@ ALTER TABLE `jasa`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

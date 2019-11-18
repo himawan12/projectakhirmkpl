@@ -28,18 +28,4 @@
             <a class="dropdown-item" href="<?php echo site_url('admin/services/add') ?>">Tambah Jasa Layanan</a>
         </div>
     </li>
-    
-    <!--
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Users</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Settings</span></a>
-    </li>
-    -->
-
 </ul>

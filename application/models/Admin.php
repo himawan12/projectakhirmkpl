@@ -3,13 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Model
 {
-    //fungsi cek session
     function logged_id()
     {
         return $this->session->userdata('user_name');
     }
 
-    //fungsi check login
     function check_login($table, $field1, $field2)
     {
         $this->db->select('*');

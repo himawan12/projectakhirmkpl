@@ -6,7 +6,6 @@ class Dashboard extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        //load model admin
         $this->load->model('admin');
     }
 
@@ -17,7 +16,6 @@ class Dashboard extends CI_Controller {
             $this->load->view("admin/overview");         
         }
         else{
-            //jika session belum terdaftar, maka redirect ke halaman login
             redirect("login");
         }
     }
