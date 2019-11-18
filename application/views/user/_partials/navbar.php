@@ -5,7 +5,13 @@
 
     <!-- Baris berikut ini hanya untuk spasi, supaya tombol admin terletak di kanan -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"></form>
-
+    
+    <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="<?php echo site_url('welcome/about') ?>" role="button">Tentang Kami</a>
+        </li>
+    </ul>
+    
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
         <li class="nav-item dropdown no-arrow">

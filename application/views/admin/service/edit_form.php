@@ -53,7 +53,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="name">Gambar</label>
+								<label for="name">Gambar (Ukuran gambar tidak boleh lebih dari 1024 x 768)</label>
 								<input class="form-control-file <?php echo form_error('image') ? 'is-invalid':'' ?>"
 								 type="file" name="image" />
 								<input type="hidden" name="old_image" value="<?php echo $service->image ?>" />

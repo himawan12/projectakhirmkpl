@@ -53,7 +53,7 @@ class Service_model extends CI_Model
         $post = $this->input->post();
         $this->id_jasa = $post["id"];
         $this->nama_jasa = $post["nama_jasa"];
-        //upload gambar
+        
         if (!empty($_FILES["image"]["name"])) {
             $this->image = $this->_uploadImage();
         } 
@@ -78,9 +78,7 @@ class Service_model extends CI_Model
         $config['allowed_types']        = 'gif|jpg|png';
         $config['file_name']            = $this->id_jasa;
         $config['overwrite']            = true;
-        $config['max_size']             = 1024; // 1MB
-        // $config['max_width']            = 1024;
-        // $config['max_height']           = 768;
+        $config['max_size']             = 1024; 
 
         $this->load->library('upload', $config);
 
@@ -99,5 +97,4 @@ class Service_model extends CI_Model
             return array_map('unlink', glob(FCPATH."upload/service/$filename.*"));
         }
     }
-
 }

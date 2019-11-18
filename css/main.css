@@ -1,24 +1,3 @@
-/*
-
-	Template Author : pixelhint.com
-	Author Email    : contact@pixelhint.com
-	
-	
-	*****************************************
-	
-	
-	- Header
-	- Billboard
-	- Services
-	- Call To Action
-	- Testimonials
-	- Footer
-	
-*/
-
-
-
-
 /*  Fonts  */
 @font-face {
     font-family: 'LatoRegular';
@@ -107,6 +86,11 @@ header nav ul li a:hover{
 	background: #ffffff url('../img/billboard_bg.jpg') no-repeat fixed;
 }
 
+.billboard_about{
+	width: 100%;
+	height: 500px;
+	background: #ffffff url('../img/billboard_about.jpg') no-repeat fixed;
+}
 
 .caption{
 	width: 100%;
@@ -155,7 +139,7 @@ header nav ul li a:hover{
 	height: 10px;
 	border: 0;
 	background: url('../img/separator.png');
-	margin-bottom: 75px;
+	margin-bottom: 0px;
 	margin-left: -4px;
 }
 
@@ -167,7 +151,7 @@ header nav ul li a:hover{
 	width: 230px;
 	margin-left: -19px;
 	margin-right: -16px;
-	margin-bottom: 40px;
+	margin-bottom: 0px;
 }
 
 .services .desc{
@@ -211,18 +195,20 @@ header nav ul li a:hover{
 /* Call To Action Style */
 .call_to_action{
 	width: 100%;
-	height: 600px;
+	height: 100%;
 	background-color: #f7f7f7;
 	overflow: hidden;
 	margin-bottom: 80px;
 }
 
 .call_to_action img{
-	width: 400px;
-	margin-top: 73px;
+	width: 340px;
+	margin-top: 50px;
 	margin-left: -50px;
 	margin-right: 60px;
+	margin-bottom: 50px;
 	float: left;
+	cursor: pointer;
 }
 .call_to_action .cta_desc{
 	width: 580px;
@@ -341,113 +327,6 @@ header nav ul li a:hover{
 	right: 0;
 }
 
-
-
-/*  Newsletter  
-.newsletter{
-	width: 100%;
-	height: 180px;
-	background: #eba151 url('../img/newsletter_pat.png') repeat;
-	background-position: 0 -20px;
-	overflow: hidden;
-	position: relative;
-}
-
-.newsletter p{
-	width: 330px;
-	color: #fff;
-	font-family: "LatoBold", arial;
-	font-size: 35px;
-	font-weight: bold;
-	text-transform: uppercase;
-	float: left;
-	margin-top: 50px;
-	line-height: 40px;
-}
-
-.newsletter .sub_form{
-	float: right;
-	margin-top: 57px;
-	width: 600px;
-	height: 62px;
-	background: #ffffff;
-	border-radius: 100px;
-	border: 2px #e19646 solid;
-}
-
-.newsletter .email_field,
-.newsletter .name_field{
-	border: none;
-	outline: none;
-	background: #ffffff;
-	width: 180px;
-	height: 60px;
-	padding: 0 20px;
-	color: #949494;
-	font-family: "LatoRegular", arial;
-	font-size: 14px;
-
-}
-
-
-.newsletter .email_field::-webkit-input-placeholder,
-.newsletter .name_field::-webkit-input-placeholder {
-   color: #d3d2d2;
-}
-*/
-
-/*
-.newsletter .email_field:-moz-placeholder ,
-.newsletter .name_field:-moz-placeholder { 
-   color: #d3d2d2;  
-}
-
-.newsletter .email_field::-moz-placeholder , 
-.newsletter .name_field::-moz-placeholder {  
-   color: #d3d2d2;  
-}
-
-.newsletter .email_field:-ms-input-placeholder,  
-.newsletter .name_field:-ms-input-placeholder {  
-   color: #d3d2d2;  
-} 
-
-.newsletter .email_field{
-	border-top-left-radius: 100px;
-	border-bottom-left-radius: 100px;
-	border-right: 1px #e4e4e4 solid; 
-}
-
-.newsletter .name_field{
-	padding-right: 0; 
-}
-
-.newsletter .submit_nl{
-	height: 40px;
-	padding: 0 40px;
-	border: 0;
-	color: #fdfdfd;
-	font-family: "LatoBold", arial;
-	font-size: 17px;
-	font-weight: bold;
-	background-color: #575351;
-	float: right;
-	margin-right: 10px;
-	margin-top: 11px;
-	outline: none;
- 
-	border-radius: 20px;
-	-moz-border-radius: 20px;
-	-webkit-border-radius: 20px;
-}
-
-.newsletter .submit_nl:hover{
-	cursor: pointer;
-	background: #4f4c49;
-}
-*/
-
-
 /*  Footer  */
 footer{
 	width: 100%;
@@ -528,7 +407,7 @@ header nav ul li a,
 	-o-transition: .2s linear;
 }
 
-/* Map */
+/* Map adn Google 360 */
 iframe{
 	margin-top: 20px;
 	margin-left: 100px;
@@ -537,18 +416,10 @@ iframe{
 	float: left;
 }
 
-/* Clock */
-.clock_description{
-	width: 580px;
-	float: right;
-	margin-top: 20px;
+.current_time{
+	margin-bottom: 20px;
 }
 
-.current_time{
-	width: 580px;
-	float: right;
-	margin-top: 20px;
-}
 
 /* Contact */
 .contact h3{
@@ -566,5 +437,4 @@ iframe{
 	color: #7e7e7e;
 	line-height: 20px;
 	float: top;
-
 }

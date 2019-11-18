@@ -59,7 +59,7 @@ class Product_model extends CI_Model
         $post = $this->input->post();
         $this->id_produk = $post["id"];
         $this->nama_produk = $post["nama_produk"];
-        //upload gambar
+        
         if (!empty($_FILES["image"]["name"])) {
 		    $this->image = $this->_uploadImage();
 		} 
@@ -85,9 +85,7 @@ class Product_model extends CI_Model
 	    $config['allowed_types']        = 'gif|jpg|png';
 	    $config['file_name']            = $this->id_produk;
 	    $config['overwrite']			= true;
-	    $config['max_size']             = 1024; // 1MB
-	    // $config['max_width']            = 1024;
-	    // $config['max_height']           = 768;
+	    $config['max_size']             = 1024;
 
 	    $this->load->library('upload', $config);
 
@@ -106,5 +104,4 @@ class Product_model extends CI_Model
 			return array_map('unlink', glob(FCPATH."upload/product/$filename.*"));
 	    }
 	}
-
 }
