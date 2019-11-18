@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2019 at 11:13 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Waktu pembuatan: 12 Nov 2019 pada 16.16
+-- Versi server: 10.1.30-MariaDB
+-- Versi PHP: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,61 +25,119 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jasa`
+-- Struktur dari tabel `jasa`
 --
 
 CREATE TABLE `jasa` (
   `id_jasa` varchar(64) NOT NULL,
   `nama_jasa` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL DEFAULT 'default.jpg',
   `harga_jasa` int(11) NOT NULL,
   `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jasa`
+-- Dumping data untuk tabel `jasa`
 --
 
-INSERT INTO `jasa` (`id_jasa`, `nama_jasa`, `harga_jasa`, `keterangan`) VALUES
-('5d07578c76890', 'Cuci mobil', 50000, 'Kling-kling'),
-('5d07579d9ddd2', 'Ganti oli', 50000, 'Oli harus beli lagi?');
+INSERT INTO `jasa` (`id_jasa`, `nama_jasa`, `image`, `harga_jasa`, `keterangan`) VALUES
+('5d15d787e9a8d', 'Carwash Express', '5d15d787e9a8d.jpg', 30000, 'Size S'),
+('5d39b62f9b188', 'Carwash Express', '5d39b62f9b188.jpg', 40000, 'Size L'),
+('5d39b672b7c71', 'Carwash Express', '5d39b672b7c71.jpg', 35000, 'Size M');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
   `id_produk` varchar(64) NOT NULL,
   `nama_produk` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL DEFAULT 'default.jpg',
+  `kategori` varchar(255) NOT NULL,
   `harga_produk` int(11) NOT NULL,
-  `keterangan` text NOT NULL
+  `keterangan` text NOT NULL,
+  `post_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `produk`
+-- Dumping data untuk tabel `produk`
 --
 
-INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga_produk`, `keterangan`) VALUES
-('5d04c8bae2056', 'Crystal beard', 5000, 'ABCD'),
-('5d04f95b73136', 'Mind oil', 100000, 'Stok habis'),
-('5d04ff6b884c4', 'Alven', 12324, 'Journey to Void');
+INSERT INTO `produk` (`id_produk`, `nama_produk`, `image`, `kategori`, `harga_produk`, `keterangan`, `post_date`) VALUES
+('5d11e25341278', 'Liqui moly', '5d11e25341278.jpg', 'Oli', 550000, 'Tipe 10W-40', '2019-07-07 16:36:01');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `recordjasa`
+--
+
+CREATE TABLE `recordjasa` (
+  `id_recordjasa` varchar(64) NOT NULL,
+  `nama_jasa` varchar(255) NOT NULL,
+  `harga_jasa` int(11) NOT NULL,
+  `nama_konsumen` varchar(255) NOT NULL,
+  `dikerjakan_oleh` varchar(255) NOT NULL,
+  `tanggal` varchar(255) NOT NULL,
+  `jam` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `recordjasa`
+--
+
+INSERT INTO `recordjasa` (`id_recordjasa`, `nama_jasa`, `harga_jasa`, `nama_konsumen`, `dikerjakan_oleh`, `tanggal`, `jam`) VALUES
+('5dcac6c757d18', 'Ganti oli', 20000, 'Aris Setiawan', 'Salim', '12 November 2019', '13:24 - 14:15'),
+('5dcac8e44d4c4', 'We live in a society', 35000, 'Arthur', 'Fleck', '23 Maret 1981', '00:00 - 05:00');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
+--
+
+CREATE TABLE `user` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`username`, `password`) VALUES
+('admin', 'admin123'),
+('himawan', 'lupa');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `jasa`
+-- Indeks untuk tabel `jasa`
 --
 ALTER TABLE `jasa`
   ADD PRIMARY KEY (`id_jasa`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
+
+--
+-- Indeks untuk tabel `recordjasa`
+--
+ALTER TABLE `recordjasa`
+  ADD PRIMARY KEY (`id_recordjasa`);
+
+--
+-- Indeks untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

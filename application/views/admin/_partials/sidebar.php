@@ -28,18 +28,15 @@
             <a class="dropdown-item" href="<?php echo site_url('admin/services/add') ?>">Tambah Jasa Layanan</a>
         </div>
     </li>
-    
-    <!--
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Users</span></a>
+    <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'recordservices' ? 'active': '' ?>">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="fas fa-fw fa-book-open"></i>
+            <span>Record Jasa</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <a class="dropdown-item" href="<?php echo site_url('admin/recordservices') ?>">Lihat record</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/recordservices/add') ?>">Tambah record</a>
+        </div>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Settings</span></a>
-    </li>
-    -->
-
 </ul>

@@ -32,31 +32,23 @@
 
 				<div class="card mb-3">
 					<div class="card-header">
-						<a href="<?php echo site_url('admin/services/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+						<a href="<?php echo site_url('admin/recordservices/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
 					</div>
 					<div class="card-body">
 
-						<form action="<?php base_url('admin/service/add') ?>" method="post" enctype="multipart/form-data" >
+						<form action="<?php base_url('admin/recordservice/add') ?>" method="post" enctype="multipart/form-data" >
+							
 							<div class="form-group">
-								<label for="nama_jasa">Nama Jasa Layanan*</label>
+								<label for="nama_jasa">Nama Jasa*</label>
 								<input class="form-control <?php echo form_error('nama_jasa') ? 'is-invalid':'' ?>"
 								 type="text" name="nama_jasa" placeholder="Nama Jasa" />
 								<div class="invalid-feedback">
 									<?php echo form_error('nama_jasa') ?>
 								</div>
 							</div>
-							
-							<div class="form-group">
-								<label for="name">Gambar (Ukuran gambar tidak boleh lebih dari 1024 x 768)</label>
-								<input class="form-control-file <?php echo form_error('image') ? 'is-invalid':'' ?>"
-								 type="file" name="image" />
-								<div class="invalid-feedback">
-									<?php echo form_error('image') ?>
-								</div>
-							</div>
 
 							<div class="form-group">
-								<label for="harga_jasa">Harga Jasa Layanan*</label>
+								<label for="harga_jasa">Harga Jasa*</label>
 								<input class="form-control <?php echo form_error('harga_jasa') ? 'is-invalid':'' ?>"
 								 type="number" name="harga_jasa" min="0" placeholder="Harga Jasa" />
 								<div class="invalid-feedback">
@@ -65,11 +57,38 @@
 							</div>
 
 							<div class="form-group">
-								<label for="keterangan">Keterangan*</label>
-								<textarea class="form-control <?php echo form_error('keterangan') ? 'is-invalid':'' ?>"
-								 name="keterangan" placeholder="Keterangan Jasa"></textarea>
+								<label for="nama_konsumen">Nama Konsumen*</label>
+								<input class="form-control <?php echo form_error('nama_konsumen') ? 'is-invalid':'' ?>"
+								 type="text" name="nama_konsumen" placeholder="Nama Konsumen" />
 								<div class="invalid-feedback">
-									<?php echo form_error('keterangan') ?>
+									<?php echo form_error('nama_konsumen') ?>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="dikerjakan_oleh">Dikerjakan oleh*</label>
+								<input class="form-control <?php echo form_error('dikerjakan_oleh') ? 'is-invalid':'' ?>"
+								 type="text" name="dikerjakan_oleh" placeholder="Nama" />
+								<div class="invalid-feedback">
+									<?php echo form_error('dikerjakan_oleh') ?>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="tanggal">Tanggal*</label>
+								<input class="form-control <?php echo form_error('tanggal') ? 'is-invalid':'' ?>"
+								 type="text" name="tanggal" placeholder="Tanggal" />
+								<div class="invalid-feedback">
+									<?php echo form_error('tanggal') ?>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="jam">Jam*</label>
+								<input class="form-control <?php echo form_error('jam') ? 'is-invalid':'' ?>"
+								 type="text" name="jam" placeholder="Jam" />
+								<div class="invalid-feedback">
+									<?php echo form_error('jam') ?>
 								</div>
 							</div>
 
