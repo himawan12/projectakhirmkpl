@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Nov 2019 pada 16.16
+-- Waktu pembuatan: 14 Nov 2019 pada 18.42
 -- Versi server: 10.1.30-MariaDB
 -- Versi PHP: 7.2.2
 
@@ -21,6 +21,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `dedua`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `absensi`
+--
+
+CREATE TABLE `absensi` (
+  `id_absensi` varchar(64) NOT NULL,
+  `tanggal` varchar(255) NOT NULL,
+  `tidak_hadir` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `absensi`
+--
+
+INSERT INTO `absensi` (`id_absensi`, `tanggal`, `tidak_hadir`) VALUES
+('5dcd912a2d407', '1 Januari 2020', 'Bambang, Uvuvwevwevwe onyetenyevwe ugwemubwem osas'),
+('5dcd91c2bf0ef', '17 Januari 2018', '-'),
+('5dcd91ed91a1f', '12 Desember 2019', 'Ethan, Bradberry');
 
 -- --------------------------------------------------------
 
@@ -66,7 +87,8 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `image`, `kategori`, `harga_produk`, `keterangan`, `post_date`) VALUES
-('5d11e25341278', 'Liqui moly', '5d11e25341278.jpg', 'Oli', 550000, 'Tipe 10W-40', '2019-07-07 16:36:01');
+('5d11e25341278', 'Liqui moly', '5d11e25341278.jpg', 'Oli', 550000, 'Tipe 10W-40', '2019-07-07 16:36:01'),
+('5dcd91935c0d4', 'Soul Stone', 'default.jpg', '?', 0, 'Soul for soul', '2019-11-14 17:40:35');
 
 -- --------------------------------------------------------
 
@@ -114,6 +136,12 @@ INSERT INTO `user` (`username`, `password`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `absensi`
+--
+ALTER TABLE `absensi`
+  ADD PRIMARY KEY (`id_absensi`);
 
 --
 -- Indeks untuk tabel `jasa`

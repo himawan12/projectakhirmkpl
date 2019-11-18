@@ -27,7 +27,7 @@
 				<!-- DataTables -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<a href="<?php echo site_url('admin/recordservices/add') ?>"><i class="fas fa-plus"></i> Add New</a>
+						<a href="<?php echo site_url('admin/absents/add') ?>"><i class="fas fa-plus"></i> Add New</a>
 					</div>
 					<div class="card-body">
 
@@ -35,41 +35,25 @@
 							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 								<thead>
 									<tr>
-										<th>Nama Jasa</th>
-										<th>Harga Jasa</th>
-										<th>Nama Konsumen</th>
-										<th>Dikerjakan oleh</th>
 										<th>Tanggal</th>
-										<th>Jam</th>
+										<th>Tidak Hadir</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<?php foreach ($recordservices as $recordservice): ?>
+									<?php foreach ($absents as $absent): ?>
 									<tr>
 										<td width="150">
-											<?php echo $recordservice->nama_jasa ?>
+											<?php echo $absent->tanggal ?>
 										</td>
 										<td>
-											<?php echo $recordservice->harga_jasa ?>
-										</td>
-										<td>
-											<?php echo $recordservice->nama_konsumen ?>
-										</td>
-										<td>
-											<?php echo $recordservice->dikerjakan_oleh ?>
-										</td>
-										<td>
-											<?php echo $recordservice->tanggal ?>
-										</td>
-										<td>
-											<?php echo $recordservice->jam ?>
+											<?php echo $absent->tidak_hadir ?>
 										</td>
 										
 										<td width="250">
-											<a href="<?php echo site_url('admin/recordservices/edit/'.$recordservice->id_recordjasa) ?>"
+											<a href="<?php echo site_url('admin/absents/edit/'.$absent->id_absensi) ?>"
 											 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-											<a onclick="deleteConfirm('<?php echo site_url('admin/recordservices/delete/'.$recordservice->id_recordjasa) ?>')"
+											<a onclick="deleteConfirm('<?php echo site_url('admin/absents/delete/'.$absent->id_absensi) ?>')"
 											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
 										</td>
 									</tr>
